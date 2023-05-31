@@ -7,8 +7,8 @@ steps:
   image: plugins/docker
   commands:
       - pwd
-      - git clone --single-branch --branch=main https://github.com/linhnv2023/drone_test.git /data
-      - cd /data 
+      - git clone --single-branch --branch=main https://github.com/linhnv2023/drone_test.git /src
+      - cd /src 
       - docker build  -t  drone_test
       - docker tag drone_test:latest localhost:5000/drone_test:latest
       - docker push localhost:5000/drone_test
