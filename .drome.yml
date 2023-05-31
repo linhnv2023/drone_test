@@ -15,4 +15,5 @@ trigger:
   event:
     - push
     - custom
+    - pull_request
 
