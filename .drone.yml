@@ -1,0 +1,18 @@
+kind: pipeline
+type: docker
+name: build
+
+steps:
+- name: build  
+  image: plugins/docker
+  commands:
+      - git clone --single-branch --branch=main https://github.com/linhnv2023/drone_test.git /data
+      - cd /data 
+      - docker build  -t  drone_test
+      - docker tag drone_test:latest localhost:5000/drone_test:latest
+      - docker push localhost:5000/drone_test
+trigger:
+  event:
+    - push
+    - custom
+    - pull_request
