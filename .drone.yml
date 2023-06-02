@@ -1,9 +1,9 @@
 kind: pipeline
-type: docker
-name: build
+type: exec
+name: test
 
 steps:
-- name: build  
+- name: deploy  
   commands:
       - pwd
       - scp -r * /data
