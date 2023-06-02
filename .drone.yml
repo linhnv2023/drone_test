@@ -1,19 +1,10 @@
 kind: pipeline
 type: docker
-name: build
+name: default
 
 steps:
-- name: build  
-  image: plugins/docker
+- name: greeting
+  image: alpine
   commands:
-      - pwd
-      - git clone --single-branch --branch=main https://github.com/linhnv2023/drone_test.git /src
-      - cd /src 
-      - docker build  -t  drone_test
-      - docker tag drone_test:latest localhost:5000/drone_test:latest
-      - docker push localhost:5000/drone_test
-trigger:
-  event:
-    - push
-    - custom
-    - pull_request
+  - echo hello
+  - echo world
