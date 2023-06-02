@@ -8,7 +8,7 @@ steps:
   commands:
       - pwd
       - cd /drone/src
-      - scp -r * /data 
+      - scp -r * /opt
 trigger:
   event:
     - push
