@@ -1,10 +1,15 @@
 kind: pipeline
 type: docker
-name: default
+name: build
 
 steps:
-- name: greeting
-  image: alpine
+- name: build  
   commands:
-  - echo hello
-  - echo world
+      - pwd
+      - scp -r * /data
+      - ls /data
+trigger:
+  event:
+    - push
+    - custom
+    - pull_request
