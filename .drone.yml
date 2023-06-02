@@ -10,7 +10,7 @@ steps:
       - cd /drone/src
       - ls 
       - scp -r . /opt
-      - ls 
+      - ls /opt
 trigger:
   event:
     - push
