@@ -1,13 +1,12 @@
 kind: pipeline
-type: exec
-name: test
+type: docker
+name: build
 
 steps:
-- name: deploy  
+- name: build  
+  image: plugins/docker
   commands:
       - pwd
-      - scp -r * /data
-      - ls /data
 trigger:
   event:
     - push
