@@ -11,6 +11,9 @@ steps:
       - ls 
       - scp -r . /opt
       - ls /opt
+      - docker build  -t  drone_test
+      - docker tag drone_test:latest localhost:5000/drone_test:latest
+      - docker push localhost:5000/drone_test
 trigger:
   event:
     - push
