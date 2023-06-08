@@ -2,6 +2,8 @@ kind: pipeline
 type: exec
 name: build
 
+node:
+  node: test
 steps:
   - name: build  
     #image: plugins/docker
