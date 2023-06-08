@@ -3,9 +3,9 @@ type: exec
 name: build
 
 steps:
-- name: build  
-  image: plugins/docker
-  commands:
+  - name: build  
+    #image: plugins/docker
+    commands:
       - pwd
       - cd /drone/src
       - ls 
@@ -16,7 +16,7 @@ steps:
       - docker push localhost:5000/drone_test
 trigger:
   branch:
-    - develop
+    - main
   event:
     - push
     - custom
